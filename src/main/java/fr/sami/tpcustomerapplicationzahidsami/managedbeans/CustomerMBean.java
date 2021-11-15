@@ -16,25 +16,30 @@ import javax.ejb.EJB;
  *
  * @author samizahid
  */
+
 @Named(value = "customerMBean")
 @ViewScoped
-public class CustomerMBean implements Serializable {  
-  private List<Customer> customerList;  
+public class CustomerMBean implements Serializable {
+  private List<Customer> customers;
 
   @EJB
-  private CustomerManager customerManager;  
-        
-  public CustomerMBean() {  }  
-        
-  /** 
-   * Retourne la liste des clients pour affichage dans une DataTable 
-   * @return 
-   */  
-  public List<Customer> getCustomers() {
-    if (customerList == null) {
-      customerList = customerManager.getAllCustomers();
-    }
-    return customerList;
-  }  
-}
+  private CustomerManager customerManager;
 
+  /**
+   * Creates a new instance of CustomerMBean
+   */
+  public CustomerMBean() {
+  }
+
+  /** 
+  * Renvoie la liste des clients pour affichage dans une DataTable 
+  * @return 
+  */  
+  public List<Customer> getCustomers() {
+    if (customers == null) {
+      customers = customerManager.getAllCustomers();
+    }
+    return customers;  
+  }  
+
+}

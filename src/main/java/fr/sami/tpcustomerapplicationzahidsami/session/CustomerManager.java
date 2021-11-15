@@ -23,8 +23,8 @@ public class CustomerManager {
 
     @PersistenceContext(unitName = "customerPU")
     private EntityManager em;
-    @Resource
-    private javax.transaction.UserTransaction utx;
+   // @Resource
+    //private javax.transaction.UserTransaction utx;
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
